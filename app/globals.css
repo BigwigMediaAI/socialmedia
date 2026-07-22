@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+:root {
+  /* =========================
+     BIGWIG BRAND COLORS
+  ========================== */
+
+  /* Primary - BigWig Blue */
+  --primary: #155a9c;
+  --primary-light: #2872b3;
+  --primary-dark: #0e477e;
+
+  /* Accent - BigWig Red */
+  --accent: #f23f49;
+  --accent-hover: #d92f3a;
+  --accent-light: #ff626a;
+
+  /* =========================
+     BACKGROUNDS
+  ========================== */
+
+  --bg: #ffffff;
+  --bg-secondary: #f5f8fb;
+
+  --card-bg: #eef4f9;
+  --card-bg2: #f8fafc;
+
+  /* =========================
+     TEXT
+  ========================== */
+
+  --text-primary: #123b61;
+  --text-secondary: #64748b;
+
+  /* =========================
+     BORDER
+  ========================== */
+
+  --border: #dce6ef;
+
+  /* =========================
+     ICONS / UI
+  ========================== */
+
+  --icon-bg: #155a9c;
+  --icon-color: #ffffff;
+
+  /* =========================
+     STATES
+  ========================== */
+
+  --success: #22c55e;
+  --error: #f23f49;
+}
+
+.dark {
+  /* Primary (invert for readability) */
+  --primary: #f9fafb;
+  --primary-light: #e5e7eb;
+
+  /* Accent (keep same for brand consistency) */
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+
+  /* Background */
+  --bg: #0f0f0f; /* main background */
+  --bg-secondary: #171717; /* sections */
+  --card-bg: #eeeeee; /* cards */
+  --card-bg2: #1f1f1f;
+
+  /* Text */
+  --text-primary: #f9fafb; /* main text */
+  --text-secondary: #9ca3af; /* muted text */
+
+  /* Border */
+  --border: #262626;
+
+  /* Extra UI */
+  --icon-bg: rgba(245, 158, 11, 0.15); /* soft amber */
+  --icon-color: #f59e0b;
+
+  /* States */
+  --success: #22c55e;
+  --error: #ef4444;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.cinematic-site {
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.cinematic-site a {
+  text-decoration: none;
+}
+
+.cinematic-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+}
+
+.network-orbit {
+  animation: orbit 26s linear infinite;
+}
+
+.network-orbit-slow {
+  animation-duration: 38s;
+  animation-direction: reverse;
+}
+
+.network-icon-inner {
+  animation: orbit-counter 26s linear infinite;
+}
+
+.platform-marquee {
+  animation: platform-scroll 26s linear infinite;
+}
+
+.platform-chip {
+  animation: platform-float 4.5s ease-in-out infinite;
+}
+
+.platform-chip:nth-child(3n + 2) {
+  animation-delay: -1.5s;
+}
+
+.platform-chip:nth-child(3n) {
+  animation-delay: -3s;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-counter {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes platform-scroll {
+  0%,
+  10% {
+    transform: translateY(0);
+  }
+  46%,
+  56% {
+    transform: translateY(-38%);
+  }
+  92%,
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes platform-float {
+  50% {
+    transform: translateY(-4px);
+    border-color: rgba(246, 184, 12, 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cinematic-site * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .cinematic-site {
+    overflow-x: hidden;
+  }
+
+  .hero-scene {
+    min-height: 100svh;
+  }
+
+  .services-scene,
+  .services-scene > div {
+    height: 82svh;
+  }
+
+  .services-track {
+    gap: 0.75rem;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .services-track > a {
+    height: 66svh;
+    width: 88vw;
+  }
+
+  .growth-scene .growth-core {
+    height: 10rem;
+    width: 10rem;
+    opacity: 0.42;
+  }
+
+  .growth-scene article {
+    padding: 1.75rem;
+  }
+
+  .signal-copy,
+  .signal-heading,
+  .signal-dashboard,
+  .signal-score,
+  .signal-chip,
+  .signal-final {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .signal-dashboard {
+    perspective: none;
+  }
+
+  .testimonials-scene .testimonial-card {
+    position: relative;
+    inset: auto;
+    min-height: 23rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonials-scene .testimonial-card blockquote {
+    font-size: 1.65rem;
+  }
+}
+
+.blog-content {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.blog-content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+  font-size: 16px;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content a {
+  color: #b10203; /* Tailwind blue-600 */
+  text-decoration: none;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #d1d5db; /* gray-300 */
+  padding-left: 1rem;
+  color: #6b7280; /* gray-500 */
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.blog-content ul {
+  list-style-type: disc; /* bullets */
+}
+
+.blog-content ol {
+  list-style-type: decimal; /* numbers */
+}
+
+.blog-popup-cta {
+  margin: 30px 0;
+}
+
+.quill-fixed .ql-container {
+  height: 180px;
+}
+
+.quill-fixed .ql-editor {
+  height: 100%;
+  overflow-y: auto;
+}

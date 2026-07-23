@@ -1275,13 +1275,6 @@ export default function Home() {
             </a>
 
             <a
-              href="#results"
-              className="transition-colors duration-300 hover:text-[var(--accent)]"
-            >
-              Results
-            </a>
-
-            <a
               href="#faq"
               className="transition-colors duration-300 hover:text-[var(--accent)]"
             >
@@ -1329,7 +1322,6 @@ export default function Home() {
                   ["Services", "#services"],
                   ["Process", "#process"],
                   ["Our Work", "#work"],
-                  ["Results", "#results"],
                   ["FAQ", "#faq"],
                 ].map(([label, href]) => (
                   <a

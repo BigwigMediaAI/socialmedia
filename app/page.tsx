@@ -1374,7 +1374,7 @@ export default function Home() {
             </p>
 
             {/* Main Heading */}
-            <h1 className="mx-auto max-w-6xl text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[.82] tracking-[-.06em]">
+            <h1 className="mx-auto max-w-6xl text-[2.3rem] font-black uppercase leading-[.86] tracking-[-.05em] sm:text-[clamp(3rem,8vw,8rem)] sm:leading-[.82] sm:tracking-[-.06em]">
               Stop the scroll.
               <br />
               <span className="text-[var(--primary-light)]">
@@ -1456,9 +1456,19 @@ export default function Home() {
 
         {/* Animated Statement */}
         <h2 className="relative mt-10 max-w-7xl text-[clamp(3.4rem,8vw,8.2rem)] font-black uppercase leading-[.84] tracking-[-.06em]">
-          {story.split("").map((letter, i) => (
-            <span className="story-letter inline-block origin-bottom" key={i}>
-              {letter === " " ? "\u00a0" : letter}
+          {story.split(" ").map((word, wordIndex) => (
+            <span
+              key={wordIndex}
+              className="mr-[0.22em] inline-block whitespace-nowrap"
+            >
+              {word.split("").map((letter, letterIndex) => (
+                <span
+                  key={letterIndex}
+                  className="story-letter inline-block origin-bottom"
+                >
+                  {letter}
+                </span>
+              ))}
             </span>
           ))}
         </h2>

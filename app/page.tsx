@@ -1370,24 +1370,23 @@ export default function Home() {
           <div>
             {/* Eyebrow */}
             <p className="mb-6 text-xs font-black uppercase tracking-[.34em] text-[var(--accent)]">
-              Social Media Marketing That Moves Brands Forward
+              Results-Driven Social Media Marketing
             </p>
 
             {/* Main Heading */}
             <h1 className="mx-auto max-w-6xl text-[2.3rem] font-black uppercase leading-[.86] tracking-[-.05em] sm:text-[clamp(3rem,8vw,8rem)] sm:leading-[.82] sm:tracking-[-.06em]">
-              Stop the scroll.
+              Build Your Brand.
               <br />
               <span className="text-[var(--primary-light)]">
-                Start conversations.
+                Engage Your Audience.
               </span>
               <br />
-              <span className="text-[var(--accent)]">Drive growth.</span>
+              <span className="text-[var(--accent)]">Grow Your Business.</span>
             </h1>
 
             {/* Rotating Line */}
             <p className="mt-8 text-sm font-bold uppercase tracking-[.16em] text-white/60 md:text-base">
               {rotatingLines[line]}
-
               <span className="ml-2 inline-block h-5 w-px animate-pulse bg-[var(--accent)] align-middle" />
             </p>
           </div>
